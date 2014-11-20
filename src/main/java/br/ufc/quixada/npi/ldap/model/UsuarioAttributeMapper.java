@@ -11,34 +11,29 @@ public class UsuarioAttributeMapper implements AttributesMapper<Usuario>{
 	
 	public Usuario mapFromAttributes(Attributes attributes) throws NamingException {
         Usuario person = new Usuario();
-        String name = (String) attributes.get(NOME_USUARIO_LDAP).get();
-        if(name != null) {
-        	person.setNome(name);
+        
+        if(attributes.get(NOME_USUARIO_LDAP) != null) {
+        	person.setNome((String)attributes.get(NOME_USUARIO_LDAP).get());
         }
         
-        String mail = (String) attributes.get(EMAIL_USUARIO_LDAP).get();
-        if(mail != null) {
-        	person.setEmail(mail);
+        if(attributes.get(EMAIL_USUARIO_LDAP) != null) {
+        	person.setEmail((String)attributes.get(EMAIL_USUARIO_LDAP).get());
         }
         
-        String matricula = (String) attributes.get(MATRICULA_USUARIO_LDAP).get();
-        if(matricula != null) {
-        	person.setMatricula(matricula);
+        if(attributes.get(MATRICULA_USUARIO_LDAP) != null) {
+        	person.setMatricula((String)attributes.get(MATRICULA_USUARIO_LDAP).get());
         }
         
-        String cpf = (String) attributes.get(CPF_USUARIO_LDAP).get();
-        if(cpf != null) {
-        	person.setCpf(cpf);
+        if(attributes.get(CPF_USUARIO_LDAP) != null) {
+        	person.setCpf((String)attributes.get(CPF_USUARIO_LDAP).get());
         }
         
-        String siape = (String) attributes.get(SIAPE_USUARIO_LDAP).get();
-        if(siape != null) {
-        	person.setSiape(siape);
+        if(attributes.get(SIAPE_USUARIO_LDAP) != null) {
+        	person.setSiape((String)attributes.get(SIAPE_USUARIO_LDAP).get());
         }
         
-        String celular = (String) attributes.get(CELULAR_USUARIO_LDAP).get();
-        if(celular != null) {
-        	person.setCelular(celular);
+        if(attributes.get(CELULAR_USUARIO_LDAP) != null) {
+        	person.setCelular((String)attributes.get(CELULAR_USUARIO_LDAP).get());
         }
         
         return person;
