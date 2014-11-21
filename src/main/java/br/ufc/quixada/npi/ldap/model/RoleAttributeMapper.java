@@ -12,7 +12,15 @@ public class RoleAttributeMapper implements AttributesMapper<Role> {
 	@Override
 	public Role mapFromAttributes(Attributes attributes) throws NamingException {
         String name = (String) attributes.get(AFILIAÇÃO_USUARIO_LDAP).get();
-        return new Role(name);
+        
+        switch (name) {
+		case ROLE_ALUNO:
+			return new Role("ROLE_ALUNO");
+		case ROLE_PROFESSOR:
+			return new Role("ROLE_PROFESSOR");
+		default:
+			return null;
+		}
     }
 
 }
