@@ -32,12 +32,11 @@ public class Constants {
 	public static final String LOGIN_INVALIDO = "Usuário e/ou senha inválidos";
 	
 	/** Roles */
-	
+
 	public static final String ROLE_ALUNO = "DISCENTE";
 	
 	public static final String ROLE_PROFESSOR = "DOCENTE";
 	
 	public static final String ROLE_ADMIN_SIAF = "ADMIN-SIAF";
-	
 
 }
