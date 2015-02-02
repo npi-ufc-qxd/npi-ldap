@@ -16,12 +16,16 @@ public class Constants {
 	
 	public static final String CELULAR_USUARIO_LDAP = "celular";
 	
-	public static final String AFILIAÇÃO_USUARIO_LDAP = "brEduAffiliationType";
+	public static final String AFILIACAO_TYPE = "brEduAffiliationType";
+	
+	public static final String AFILIACAO_EXIT_DATE = "brExitDate";
 	
 	
 	/**  Configurações do LDAP */
 	
-	public static final String BASE_USUARIOS_LDAP = "ou=people";
+	public static final String BASE_USUARIOS = "ou=people";
+	
+	public static final String BASE_USUARIOS_TESTE = "ou=people_teste";
 	
 	/**  Mensagens */
 	
@@ -29,9 +33,11 @@ public class Constants {
 	
 	/** Roles */
 	
-	public static final String ROLE_ALUNO = "aluno-graduacao";
+	public static final String ROLE_ALUNO = "DISCENTE";
 	
-	public static final String ROLE_PROFESSOR = "professor";
+	public static final String ROLE_PROFESSOR = "DOCENTE";
+	
+	public static final String ROLE_ADMIN_SIAF = "ADMIN-SIAF";
 	
 
 }

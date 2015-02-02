@@ -7,12 +7,12 @@ import br.ufc.quixada.npi.ldap.model.Usuario;
 
 public interface UsuarioDao {
 	
-	public List<Usuario> getAll();
+	public List<Usuario> getAll(String base);
 	
-	public List<Usuario> getUsuarioByCpf(String cpf);
+	public List<Usuario> getUsuarioByUid(String base, String uid);
 	
-	public List<Role> getAuthorities(String cpf);
+	public List<Role> getAuthorities(String base, String uid);
 	
-	public boolean autentica(String cpf, String password);
-
+	public boolean autentica(String base, String uid, String password);
+	
 }

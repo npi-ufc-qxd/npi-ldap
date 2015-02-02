@@ -1,6 +1,5 @@
 package br.ufc.quixada.npi.ldap.dao;
 
-import static br.ufc.quixada.npi.ldap.model.Constants.BASE_USUARIOS_LDAP;
 import static br.ufc.quixada.npi.ldap.model.Constants.MATRICULA_USUARIO_LDAP;
 import static org.springframework.ldap.query.LdapQueryBuilder.query;
 
@@ -30,28 +29,28 @@ public class LdapUsuarioDao implements UsuarioDao {
 	}
 
 	@Override
-	public List<Usuario> getAll() {
-		return ldapTemplate.search(BASE_USUARIOS_LDAP, "(objectclass=person)", new UsuarioAttributeMapper());
+	public List<Usuario> getAll(String base) {
+		return ldapTemplate.search(base, "(objectclass=person)", new UsuarioAttributeMapper());
 	}
 
 	@Override
-	public List<Usuario> getUsuarioByCpf(String matricula) {
+	public List<Usuario> getUsuarioByUid(String base, String uid) {
 		AndFilter andFilter = new AndFilter();
 	    andFilter.and(new EqualsFilter("objectclass","person"));
-	    andFilter.and(new EqualsFilter(MATRICULA_USUARIO_LDAP,matricula));
-	    return ldapTemplate.search("", andFilter.encode(), new UsuarioAttributeMapper());
+	    andFilter.and(new EqualsFilter(MATRICULA_USUARIO_LDAP,uid));
+	    return ldapTemplate.search(base, andFilter.encode(), new UsuarioAttributeMapper());
 	}
 
 	@Override
-	public List<Role> getAuthorities(String matricula) {
-		return ldapTemplate.search(MATRICULA_USUARIO_LDAP + "=" + matricula + "," + BASE_USUARIOS_LDAP, "(objectclass=brEduPerson)", new RoleAttributeMapper());
+	public List<Role> getAuthorities(String base, String uid) {
+		return ldapTemplate.search(MATRICULA_USUARIO_LDAP + "=" + uid + "," + base, "(objectclass=brEduPerson)", new RoleAttributeMapper());
 		
 	}
 
 	@Override
-	public boolean autentica(String matricula, String password) {
-		LdapQuery query = query().base(BASE_USUARIOS_LDAP).where("objectclass").is("person").and(MATRICULA_USUARIO_LDAP).is(matricula);
-		return ldapTemplate.authenticate(BASE_USUARIOS_LDAP, query.filter().encode(), password);
+	public boolean autentica(String base, String uid, String password) {
+		LdapQuery query = query().base(base).where("objectclass").is("person").and(MATRICULA_USUARIO_LDAP).is(uid);
+		return ldapTemplate.authenticate(base, query.filter().encode(), password);
 	}
 
 }

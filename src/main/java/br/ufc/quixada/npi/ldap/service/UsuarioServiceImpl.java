@@ -15,24 +15,24 @@ public class UsuarioServiceImpl implements UsuarioService {
 	private UsuarioDao usuarioDao;
 
 	@Override
-	public Usuario getUsuarioByCpf(String cpf) {
-		List<Usuario> usuarios = usuarioDao.getUsuarioByCpf(cpf);
+	public Usuario getUsuarioByCpf(String base, String cpf) {
+		List<Usuario> usuarios = usuarioDao.getUsuarioByUid(base, cpf);
 		if (usuarios != null && !usuarios.isEmpty()) {
 			Usuario user = usuarios.get(0);
-			user.setAuthorities(usuarioDao.getAuthorities(cpf));
+			user.setAuthorities(usuarioDao.getAuthorities(base, cpf));
 			return user;
 		}
 		return null;
 	}
 
 	@Override
-	public boolean autentica(String matricula, String password) {
-		return usuarioDao.autentica(matricula, password);
+	public boolean autentica(String base, String matricula, String password) {
+		return usuarioDao.autentica(base, matricula, password);
 	}
 
 	@Override
-	public List<Usuario> getAll() {
-		return usuarioDao.getAll();
+	public List<Usuario> getAll(String base) {
+		return usuarioDao.getAll(base);
 	}
 
 }
