@@ -2,7 +2,7 @@ package br.ufc.quixada.npi.ldap.model;
 
 public class Constants {
 	
-	/** Atributos do usu·rio no LDAP */
+	/** Atributos do usu√°rio no LDAP */
 	
 	public static final String NOME_USUARIO_LDAP = "cn";
 	
@@ -21,7 +21,7 @@ public class Constants {
 	public static final String AFILIACAO_EXIT_DATE = "brExitDate";
 	
 	
-	/**  ConfiguraÁıes do LDAP */
+	/**  Configura√ß√µes do LDAP */
 	
 	public static final String BASE_USUARIOS = "ou=people";
 	
@@ -29,7 +29,7 @@ public class Constants {
 	
 	/**  Mensagens */
 	
-	public static final String LOGIN_INVALIDO = "Usu·rio e/ou senha inv·lidos";
+	public static final String LOGIN_INVALIDO = "Usu√°rio e/ou senha inv√°lidos";
 	
 	/** Roles */
 
