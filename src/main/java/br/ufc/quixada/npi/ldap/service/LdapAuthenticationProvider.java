@@ -29,9 +29,9 @@ public class LdapAuthenticationProvider implements AuthenticationProvider {
 		String username = authentication.getName();
         String password = (String) authentication.getCredentials();
  
-        Usuario user = usuarioService.getUsuarioByCpf(Constants.BASE_USUARIOS_TESTE, username);
+        Usuario user = usuarioService.getByCpf(Constants.BASE_USUARIOS, username);
  
-        if (user == null || !usuarioService.autentica(Constants.BASE_USUARIOS_TESTE, username, password)) {
+        if (user == null || !usuarioService.autentica(Constants.BASE_USUARIOS, username, password)) {
             throw new BadCredentialsException(LOGIN_INVALIDO);
         }
  

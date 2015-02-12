@@ -4,39 +4,54 @@ public class Constants {
 	
 	/** Atributos do usuário no LDAP */
 	
-	public static final String NOME_USUARIO_LDAP = "cn";
+	public static final String NOME_USUARIO = "cn";
 	
-	public static final String EMAIL_USUARIO_LDAP = "mail";
+	public static final String EMAIL_USUARIO = "mail";
 	
-	public static final String MATRICULA_USUARIO_LDAP = "uid";
+	public static final String UID_USUARIO = "uid";
 	
-	public static final String CPF_USUARIO_LDAP = "brPersonCPF";
+	public static final String CPF_USUARIO = "brPersonCPF";
 	
-	public static final String SIAPE_USUARIO_LDAP = "siape";
+	public static final String SIAPE_USUARIO = "siape";
 	
-	public static final String CELULAR_USUARIO_LDAP = "celular";
+	public static final String TELEFONE_USUARIO = "telefone";
 	
-	public static final String AFILIACAO_TYPE = "brEduAffiliationType";
+	public static final String CARGO_USUARIO = "cargo";
 	
-	public static final String AFILIACAO_EXIT_DATE = "brExitDate";
+	public static final String CLASSE_USUARIO = "classe";
+	
+	public static final String LOTACAO_USUARIO = "lotacao";
+	
+	public static final String DATA_NASCIMENTO_USUARIO = "nascimento";
+	
+	public static final String AFILIACAO_NOME = "brEduAffiliationType";
+	
+	public static final String AFILIACAO_DATA_SAIDA = "brExitDate";
+	
+	public static final String AFILIACAO_DATA_ENTRADA = "brEntranceDate";
+	
+	public static final String FORMATO_DATA_NASCIMENTO = "dd/MM/yyyy";
+	
+	public static final String FORMATO_DATA_AFILIACAO = "yyyyMMdd";
 	
 	
-	/**  Configurações do LDAP */
+	/**  Bases do LDAP */
 	
-	public static final String BASE_USUARIOS = "ou=people";
-	
-	public static final String BASE_USUARIOS_TESTE = "ou=people_teste";
+	public static final String BASE_USUARIOS = "ou=people_teste";
+		
 	
 	/**  Mensagens */
 	
 	public static final String LOGIN_INVALIDO = "Usuário e/ou senha inválidos";
 	
-	/** Roles */
+	/** Afiliações */
 
-	public static final String ROLE_ALUNO = "DISCENTE";
+	public static final String AFFILIATION_DISCENTE = "DISCENTE";
 	
-	public static final String ROLE_PROFESSOR = "DOCENTE";
+	public static final String AFFILIATION_DOCENTE = "DOCENTE";
 	
-	public static final String ROLE_ADMIN_SIAF = "ADMIN-SIAF";
+	public static final String AFFILIATION_ADMIN_SIAF = "ADMIN-SIAF";
+	
+	public static final String AFFILIATION_STA = "STA";
 
 }

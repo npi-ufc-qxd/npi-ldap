@@ -15,11 +15,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 	private UsuarioDao usuarioDao;
 
 	@Override
-	public Usuario getUsuarioByCpf(String base, String cpf) {
-		List<Usuario> usuarios = usuarioDao.getUsuarioByUid(base, cpf);
+	public Usuario getByCpf(String base, String cpf) {
+		List<Usuario> usuarios = usuarioDao.getByCpf(base, cpf);
 		if (usuarios != null && !usuarios.isEmpty()) {
 			Usuario user = usuarios.get(0);
-			user.setAuthorities(usuarioDao.getAuthorities(base, cpf));
+			user.setAffiliations(usuarioDao.getAffiliations(base, cpf));
 			return user;
 		}
 		return null;
@@ -33,6 +33,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public List<Usuario> getAll(String base) {
 		return usuarioDao.getAll(base);
+	}
+
+	@Override
+	public List<Usuario> getByAffiliation(String base, String affiliation) {
+		return usuarioDao.getByAffiliation(base, affiliation);
 	}
 
 }
