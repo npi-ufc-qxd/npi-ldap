@@ -37,7 +37,7 @@ public class Constants {
 	
 	/**  Bases do LDAP */
 	
-	public static final String BASE_USUARIOS = "ou=people_teste";
+	public static final String BASE_USUARIOS = "ou=people";
 		
 	
 	/**  Mensagens */
