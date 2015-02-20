@@ -51,23 +51,24 @@ public class AffiliationAttributeMapper implements ContextMapper<Affiliation> {
         }
         
         String afiliacao = ((String) attributes.get(AFILIACAO_NOME).get()).toUpperCase();
-        switch (afiliacao) {
-			case AFFILIATION_DISCENTE:
+			if(AFFILIATION_DISCENTE.equals(afiliacao)) {
 				affiliation.setNome("ROLE_DISCENTE");
 				return affiliation;
-			case AFFILIATION_DOCENTE:
+			}
+			if(AFFILIATION_DOCENTE.equals(afiliacao)) {
 				affiliation.setNome("ROLE_DOCENTE");
 				return affiliation;
-			case AFFILIATION_ADMIN_SIAF:
+			}
+			if(AFFILIATION_ADMIN_SIAF.equals(afiliacao)) {
 				affiliation.setNome("ROLE_ADMIN_SIAF");
 				return affiliation;
-			case AFFILIATION_STA:
+			}
+			if(AFFILIATION_STA.equals(afiliacao)) {
 				affiliation.setNome("ROLE_STA");
 				return affiliation;
-			default:
-				affiliation.setNome(afiliacao);
-				return affiliation;
-		}
+			}
+			affiliation.setNome(afiliacao);
+			return affiliation;
     }
 
 }
