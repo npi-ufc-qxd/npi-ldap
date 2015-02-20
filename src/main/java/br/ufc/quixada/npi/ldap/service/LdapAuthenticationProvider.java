@@ -31,7 +31,7 @@ public class LdapAuthenticationProvider implements AuthenticationProvider {
  
         Usuario user = usuarioService.getByCpf(Constants.BASE_USUARIOS, username);
  
-        if (user == null || !usuarioService.autentica(Constants.BASE_USUARIOS, username, password)) {
+        if (user == null || !usuarioService.autentica(Constants.BASE_USUARIOS, username, password) || user.getAuthorities().isEmpty()) {
             throw new BadCredentialsException(LOGIN_INVALIDO);
         }
  
