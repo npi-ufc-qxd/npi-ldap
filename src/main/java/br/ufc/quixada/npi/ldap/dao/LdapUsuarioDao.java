@@ -13,6 +13,7 @@ import javax.inject.Named;
 
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.query.LdapQuery;
+import org.springframework.stereotype.Component;
 
 import br.ufc.quixada.npi.ldap.model.Affiliation;
 import br.ufc.quixada.npi.ldap.model.AffiliationAttributeMapper;
@@ -20,29 +21,38 @@ import br.ufc.quixada.npi.ldap.model.Usuario;
 import br.ufc.quixada.npi.ldap.model.UsuarioAttributeMapper;
 
 @Named
+@Component
 public class LdapUsuarioDao implements UsuarioDao {
 	
 	@Inject
 	private LdapTemplate ldapTemplate;
+	
+	//@Value("#{environment.ldapou}")
+	@Inject
+	private String base;
+	
+	public void setBase(String base) {
+		this.base = base;
+	}
 	
 	public void setLdapTemplate(LdapTemplate ldapTemplate) {
 		this.ldapTemplate = ldapTemplate;
 	}
 
 	@Override
-	public List<Usuario> getAll(String base) {
+	public List<Usuario> getAll() {
 		LdapQuery query = query().base(base).where("objectclass").is("person");
 		return ldapTemplate.search(query, new UsuarioAttributeMapper());
 	}
 
 	@Override
-	public boolean autentica(String base, String matricula, String password) {
+	public boolean autentica(String matricula, String password) {
 		LdapQuery query = query().base(base).where("objectclass").is("person").and(UID_USUARIO).is(matricula);
 		return ldapTemplate.authenticate(base, query.filter().encode(), password);
 	}
 
 	@Override
-	public List<Usuario> getByAffiliation(String base, String affiliation) {
+	public List<Usuario> getByAffiliation(String affiliation) {
 		LdapQuery query = query().base(base).where("objectclass").is("brEduPerson").and(AFILIACAO_NOME).is(affiliation);
 		List<Affiliation> affiliations = ldapTemplate.search(query, new AffiliationAttributeMapper());
 		List<Usuario> usuarios = new ArrayList<Usuario>();
@@ -50,7 +60,7 @@ public class LdapUsuarioDao implements UsuarioDao {
 			for(Affiliation aff : affiliations) {
 				if(aff.getDn() != null && !aff.getDn().isEmpty()) {
 					String cpf = aff.getDn().split(",")[1].split("=")[1];
-					List<Usuario> result = getByCpf(base, cpf);
+					List<Usuario> result = getByCpf(cpf);
 					if(result != null && !result.isEmpty()) {
 						usuarios.add(result.get(0));
 					}
@@ -61,13 +71,13 @@ public class LdapUsuarioDao implements UsuarioDao {
 	}
 
 	@Override
-	public List<Usuario> getByCpf(String base, String cpf) {
+	public List<Usuario> getByCpf(String cpf) {
 		LdapQuery query = query().base(base).where("objectclass").is("person").and(CPF_USUARIO).is(cpf);
 	    return ldapTemplate.search(query, new UsuarioAttributeMapper());
 	}
 
 	@Override
-	public List<Affiliation> getAffiliations(String base, String cpf) {
+	public List<Affiliation> getAffiliations(String cpf) {
 		return ldapTemplate.search(UID_USUARIO + "=" + cpf + "," + base, "(objectclass=brEduPerson)", new AffiliationAttributeMapper());
 	}
 

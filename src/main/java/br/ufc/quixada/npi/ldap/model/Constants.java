@@ -35,9 +35,7 @@ public class Constants {
 	public static final String FORMATO_DATA_AFILIACAO = "yyyyMMdd";
 	
 	
-	/**  Bases do LDAP */
-	
-	public static final String BASE_USUARIOS = "ou=people";
+	//public static final String BASE_USUARIOS_ENV = "java:comp/env/ldap/ou";
 		
 	
 	/**  Mensagens */

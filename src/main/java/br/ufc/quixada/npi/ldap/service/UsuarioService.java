@@ -6,12 +6,12 @@ import br.ufc.quixada.npi.ldap.model.Usuario;
 
 public interface UsuarioService {
 	
-	public Usuario getByCpf(String base, String cpf);
+	public Usuario getByCpf(String cpf);
 	
-	public boolean autentica(String base, String cpf, String password);
+	public boolean autentica(String cpf, String password);
 	
-	public List<Usuario> getAll(String base);
+	public List<Usuario> getAll();
 	
-	public List<Usuario> getByAffiliation(String base, String affiliation);
+	public List<Usuario> getByAffiliation(String affiliation);
 
 }

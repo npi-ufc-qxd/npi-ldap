@@ -14,7 +14,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 
-import br.ufc.quixada.npi.ldap.model.Constants;
 import br.ufc.quixada.npi.ldap.model.Usuario;
 
 @Named
@@ -29,9 +28,9 @@ public class LdapAuthenticationProvider implements AuthenticationProvider {
 		String username = authentication.getName();
         String password = (String) authentication.getCredentials();
  
-        Usuario user = usuarioService.getByCpf(Constants.BASE_USUARIOS, username);
+        Usuario user = usuarioService.getByCpf(username);
  
-        if (user == null || !usuarioService.autentica(Constants.BASE_USUARIOS, username, password) || user.getAuthorities().isEmpty()) {
+        if (user == null || !usuarioService.autentica(username, password) || user.getAuthorities().isEmpty()) {
             throw new BadCredentialsException(LOGIN_INVALIDO);
         }
  
