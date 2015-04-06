@@ -27,7 +27,6 @@ public class LdapUsuarioDao implements UsuarioDao {
 	@Inject
 	private LdapTemplate ldapTemplate;
 	
-	//@Value("#{environment.ldapou}")
 	@Inject
 	private String base;
 	
