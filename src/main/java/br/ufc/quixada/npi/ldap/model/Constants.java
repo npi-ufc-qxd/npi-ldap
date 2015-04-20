@@ -52,4 +52,8 @@ public class Constants {
 	
 	public static final String AFFILIATION_STA = "STA";
 
+	public static final String AFFILIATION_BIBLIOTECARIO = "BIBLIOTECARIO";
+
+	public static final String AFFILIATION_COORDENADOR_CURSO = "COORDENADOR_CURSO";
+
 }

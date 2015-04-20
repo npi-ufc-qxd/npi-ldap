@@ -7,6 +7,8 @@ import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_STA;
 import static br.ufc.quixada.npi.ldap.model.Constants.AFILIACAO_DATA_ENTRADA;
 import static br.ufc.quixada.npi.ldap.model.Constants.AFILIACAO_DATA_SAIDA;
 import static br.ufc.quixada.npi.ldap.model.Constants.AFILIACAO_NOME;
+import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_BIBLIOTECARIO;
+import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_COORDENADOR_CURSO;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -66,7 +68,16 @@ public class AffiliationAttributeMapper implements ContextMapper<Affiliation> {
 			if(AFFILIATION_STA.equals(afiliacao)) {
 				affiliation.setNome("ROLE_STA");
 				return affiliation;
-			}
+			}		
+			if(AFFILIATION_BIBLIOTECARIO.equals(afiliacao)) {
+				affiliation.setNome("ROLE_BIBLIOTECARIO");
+				return affiliation;
+			}		
+			if(AFFILIATION_COORDENADOR_CURSO.equals(afiliacao)) {
+				affiliation.setNome("ROLE_COORDENADOR_CURSO");
+				return affiliation;
+			}		
+			
 			affiliation.setNome(afiliacao);
 			return affiliation;
     }
