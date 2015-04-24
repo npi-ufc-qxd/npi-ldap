@@ -56,4 +56,13 @@ public class Constants {
 
 	public static final String AFFILIATION_COORDENADOR_CURSO = "COORDENADOR_CURSO";
 
+	public static final String AFFILIATION_COORDENADOR_NPI = "COORDENADOR_NPI";
+
+	public static final String AFFILIATION_ESTAGIARIO = "ESTAGIARIO";
+	
+	public static final String AFFILIATION_NUTRICAO = "NUTRICAO";
+	
+	
+
+	
 }
