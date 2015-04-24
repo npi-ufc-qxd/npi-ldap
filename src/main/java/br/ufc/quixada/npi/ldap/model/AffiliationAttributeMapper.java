@@ -1,14 +1,17 @@
 package br.ufc.quixada.npi.ldap.model;
 
 import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_ADMIN_SIAF;
+import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_BIBLIOTECARIO;
+import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_COORDENADOR_CURSO;
+import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_COORDENADOR_NPI;
 import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_DISCENTE;
 import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_DOCENTE;
+import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_ESTAGIARIO;
+import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_NUTRICAO;
 import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_STA;
 import static br.ufc.quixada.npi.ldap.model.Constants.AFILIACAO_DATA_ENTRADA;
 import static br.ufc.quixada.npi.ldap.model.Constants.AFILIACAO_DATA_SAIDA;
 import static br.ufc.quixada.npi.ldap.model.Constants.AFILIACAO_NOME;
-import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_BIBLIOTECARIO;
-import static br.ufc.quixada.npi.ldap.model.Constants.AFFILIATION_COORDENADOR_CURSO;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -78,6 +81,21 @@ public class AffiliationAttributeMapper implements ContextMapper<Affiliation> {
 				return affiliation;
 			}		
 			
+			if(AFFILIATION_COORDENADOR_NPI.equals(afiliacao)) {
+				affiliation.setNome("ROLE_COORDENADOR_NPI");
+				return affiliation;
+			}		
+
+			if(AFFILIATION_ESTAGIARIO.equals(afiliacao)) {
+				affiliation.setNome("ROLE_ESTAGIARIO");
+				return affiliation;
+			}		
+
+			if(AFFILIATION_NUTRICAO.equals(afiliacao)) {
+				affiliation.setNome("ROLE_NUTRICAO");
+				return affiliation;
+			}		
+
 			affiliation.setNome(afiliacao);
 			return affiliation;
     }
