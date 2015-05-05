@@ -44,7 +44,7 @@ public class Constants {
 	
 	/** Afiliações */
 
-	public static final String AFFILIATION_DISCENTE = "DISCENTE";
+	/*public static final String AFFILIATION_DISCENTE = "DISCENTE";
 	
 	public static final String AFFILIATION_DOCENTE = "DOCENTE";
 	
@@ -61,7 +61,7 @@ public class Constants {
 	public static final String AFFILIATION_ESTAGIARIO = "ESTAGIARIO";
 	
 	public static final String AFFILIATION_NUTRICAO = "NUTRICAO";
-	
+	*/
 	
 
 	
