@@ -40,4 +40,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return usuarioDao.getByAffiliation(affiliation);
 	}
 
+	@Override
+	public List<Usuario> getByCpfOrNome(String busca) {
+		return usuarioDao.getByCpfOrNome(busca);
+	}
+
 }

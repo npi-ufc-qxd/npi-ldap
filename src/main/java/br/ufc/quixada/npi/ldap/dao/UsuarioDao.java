@@ -16,5 +16,7 @@ public interface UsuarioDao {
 	public boolean autentica(String matricula, String password);
 	
 	public List<Usuario> getByAffiliation(String affiliation);
+
+	public List<Usuario> getByCpfOrNome(String busca);
 	
 }

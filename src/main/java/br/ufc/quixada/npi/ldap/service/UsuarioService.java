@@ -14,4 +14,5 @@ public interface UsuarioService {
 	
 	public List<Usuario> getByAffiliation(String affiliation);
 
+	public List<Usuario> getByCpfOrNome(String busca);
 }
