@@ -2,12 +2,11 @@ package br.ufc.quixada.npi.ldap.dao;
 
 import static br.ufc.quixada.npi.ldap.model.Constants.AFILIACAO_NOME;
 import static br.ufc.quixada.npi.ldap.model.Constants.CPF_USUARIO;
-import static br.ufc.quixada.npi.ldap.model.Constants.UID_USUARIO;
 import static br.ufc.quixada.npi.ldap.model.Constants.NOME_USUARIO;
+import static br.ufc.quixada.npi.ldap.model.Constants.UID_USUARIO;
 import static org.springframework.ldap.query.LdapQueryBuilder.query;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -85,19 +84,8 @@ public class LdapUsuarioDao implements UsuarioDao {
 	@Override
 	public List<Usuario> getByCpfOrNome(String busca) {
 		LdapQuery query = query().base(base).where(CPF_USUARIO).is(busca).or(NOME_USUARIO).like("*"+busca+"*");
+	    return ldapTemplate.search(query, new UsuarioAttributeMapper());
 		
-		Comparator<Usuario> c = new Comparator<Usuario>() {
-
-			@Override
-			public int compare(Usuario o1, Usuario o2) {
-				return o1.getNome().compareTo(o2.getNome());
-			}
-			
-		};
-		
-	    List<Usuario> result = ldapTemplate.search(query, new UsuarioAttributeMapper());
-	    result.sort(c);
-	    return result;
 	}
 
 
