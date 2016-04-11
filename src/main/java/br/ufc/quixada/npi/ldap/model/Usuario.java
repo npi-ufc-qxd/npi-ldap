@@ -16,6 +16,8 @@ public class Usuario implements UserDetails {
 	
 	private String nome;
 	
+	private String rg;
+	
 	private String cpf;
 	
 	private String email;
@@ -28,11 +30,25 @@ public class Usuario implements UserDetails {
 	
 	private Date nascimento;
 	
+	private String estadoCivil;
+	
 	private String cargo;
 	
 	private String lotacao;
 	
 	private String classe;
+	
+	private String sexo;
+	
+	private String nacionalidade;
+	
+	private String naturalidade;
+	
+	private String ufNaturalidade;
+	
+	private String ingresso;
+	
+	private String curso;
 	
 	private List<Affiliation> affiliations;
 	
@@ -44,6 +60,48 @@ public class Usuario implements UserDetails {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	
+
+	public String getNacionalidade() {
+		return nacionalidade;
+	}
+
+	public void setNacionalidade(String nacionalidade) {
+		this.nacionalidade = nacionalidade;
+	}
+
+	public String getNaturalidade() {
+		return naturalidade;
+	}
+
+	public void setNaturalidade(String naturalidade) {
+		this.naturalidade = naturalidade;
+	}
+
+	public String getUfNaturalidade() {
+		return ufNaturalidade;
+	}
+
+	public void setUfNaturalidade(String ufNaturalidade) {
+		this.ufNaturalidade = ufNaturalidade;
+	}
+
+	public String getIngresso() {
+		return ingresso;
+	}
+
+	public void setIngresso(String ingresso) {
+		this.ingresso = ingresso;
+	}
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
 	}
 
 	public String getEmail() {
@@ -76,6 +134,16 @@ public class Usuario implements UserDetails {
 
 	public void setTelefone(String celular) {
 		this.telefone = celular;
+	}
+	
+	
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
 	}
 
 	public List<Affiliation> getAuthorities() {
@@ -183,6 +251,25 @@ public class Usuario implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
+	
+	
+	
+	public String getEstadoCivil() {
+		return estadoCivil;
+	}
+
+	public void setEstadoCivil(String estadoCivil) {
+		this.estadoCivil = estadoCivil;
+	}
+
+	public String getRg() {
+		return rg;
+	}
+
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+
 
 	@Override
 	public int hashCode() {

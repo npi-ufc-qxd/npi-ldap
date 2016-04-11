@@ -34,6 +34,28 @@ public class Constants {
 	
 	public static final String FORMATO_DATA_AFILIACAO = "yyyyMMdd";
 	
+	public static final String MATRICULA = "matricula";
+	
+	public static final String RG_USUARIO = "rg";
+	
+	public static final String SEXO_USUARIO = "sexo";
+	
+	public static final String ESTADO_CIVIL_USUARIO = "estadocivil";
+	
+	public static final String NACIONALIDADE_USUARIO = "nacionalidade";
+	
+	public static final String NATURALIDADE_USUARIO = "naturalidade";
+	
+	public static final String UFNATURALIDADE_USUARIO = "ufnaturalidade";
+	
+	public static final String INGRESSO_USUARIO = "ingresso";
+	
+	public static final String CURSO_USUARIO = "curso";
+	
+	
+	
+	
+	
 	
 	//public static final String BASE_USUARIOS_ENV = "java:comp/env/ldap/ou";
 		

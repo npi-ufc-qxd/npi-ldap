@@ -18,6 +18,38 @@ public class UsuarioAttributeMapper implements AttributesMapper<Usuario>{
         
         SimpleDateFormat format = new SimpleDateFormat(Constants.FORMATO_DATA_NASCIMENTO);
         
+        if(attributes.get(NATURALIDADE_USUARIO) != null){
+        	usuario.setNaturalidade((String) attributes.get(NATURALIDADE_USUARIO).get());
+        }
+        
+        if(attributes.get(NACIONALIDADE_USUARIO) != null){
+        	usuario.setNacionalidade((String) attributes.get(NACIONALIDADE_USUARIO).get());
+        }
+        
+        if(attributes.get(UFNATURALIDADE_USUARIO) != null){
+        	usuario.setUfNaturalidade((String) attributes.get(UFNATURALIDADE_USUARIO).get());
+        }
+        
+        if(attributes.get(INGRESSO_USUARIO) != null){
+        	usuario.setIngresso((String) attributes.get(INGRESSO_USUARIO).get());
+        }
+        
+        if(attributes.get(CURSO_USUARIO) != null){
+        	usuario.setCurso((String) attributes.get(CURSO_USUARIO).get());
+        }
+             
+        if(attributes.get(SEXO_USUARIO) != null){
+        	usuario.setSexo((String) attributes.get(SEXO_USUARIO).get());
+        }
+        
+        if(attributes.get(ESTADO_CIVIL_USUARIO) != null){
+        	usuario.setEstadoCivil((String) attributes.get(ESTADO_CIVIL_USUARIO).get());
+        }
+        
+        if(attributes.get(RG_USUARIO) != null){
+        	usuario.setRg((String) attributes.get(RG_USUARIO).get());
+        }
+        
         if(attributes.get(NOME_USUARIO) != null) {
         	usuario.setNome((String)attributes.get(NOME_USUARIO).get());
         }
@@ -38,8 +70,8 @@ public class UsuarioAttributeMapper implements AttributesMapper<Usuario>{
         	usuario.setLotacao((String)attributes.get(LOTACAO_USUARIO).get());
         }
         
-        if(attributes.get(UID_USUARIO) != null) {
-        	usuario.setMatricula((String)attributes.get(UID_USUARIO).get());
+        if(attributes.get(MATRICULA) != null) {
+        	usuario.setMatricula((String)attributes.get(MATRICULA).get());
         }
         
         if(attributes.get(CPF_USUARIO) != null) {
