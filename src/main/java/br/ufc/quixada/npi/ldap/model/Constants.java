@@ -10,6 +10,8 @@ public class Constants {
 	
 	public static final String UID_USUARIO = "uid";
 	
+	public static final String MATRICULA_USUARIO = "matricula";
+	
 	public static final String CPF_USUARIO = "brPersonCPF";
 	
 	public static final String SIAPE_USUARIO = "siape";

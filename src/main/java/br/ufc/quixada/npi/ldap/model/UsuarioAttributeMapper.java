@@ -38,8 +38,8 @@ public class UsuarioAttributeMapper implements AttributesMapper<Usuario>{
         	usuario.setLotacao((String)attributes.get(LOTACAO_USUARIO).get());
         }
         
-        if(attributes.get(UID_USUARIO) != null) {
-        	usuario.setMatricula((String)attributes.get(UID_USUARIO).get());
+        if(attributes.get(MATRICULA_USUARIO) != null) {
+        	usuario.setMatricula((String)attributes.get(MATRICULA_USUARIO).get());
         }
         
         if(attributes.get(CPF_USUARIO) != null) {
