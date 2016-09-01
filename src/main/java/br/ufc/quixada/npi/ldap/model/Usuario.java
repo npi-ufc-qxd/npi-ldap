@@ -34,6 +34,8 @@ public class Usuario implements UserDetails {
 	
 	private String classe;
 	
+	private String curso;
+	
 	private List<Affiliation> affiliations;
 	
 	private List<Affiliation> authorities;
@@ -132,6 +134,14 @@ public class Usuario implements UserDetails {
 
 	public void setClasse(String classe) {
 		this.classe = classe;
+	}
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
 	}
 
 	public List<Affiliation> getAffiliations() {
