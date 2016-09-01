@@ -42,6 +42,10 @@ public class UsuarioAttributeMapper implements AttributesMapper<Usuario>{
         	usuario.setMatricula((String)attributes.get(MATRICULA_USUARIO).get());
         }
         
+        if(attributes.get(CURSO_USUARIO) != null) {
+        	usuario.setCurso((String)attributes.get(CURSO_USUARIO).get());
+        }
+        
         if(attributes.get(CPF_USUARIO) != null) {
         	usuario.setCpf((String)attributes.get(CPF_USUARIO).get());
         }
