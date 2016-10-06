@@ -4,7 +4,7 @@ public class Constants {
 	
 	/** Atributos do usuário no LDAP */
 	
-	public static final String NOME_USUARIO = "cn";
+	public static final String NOME_USUARIO = "nomecompleto";
 	
 	public static final String EMAIL_USUARIO = "mail";
 	
@@ -37,35 +37,11 @@ public class Constants {
 	public static final String FORMATO_DATA_NASCIMENTO = "dd/MM/yyyy";
 	
 	public static final String FORMATO_DATA_AFILIACAO = "yyyyMMdd";
-	
-	
-	//public static final String BASE_USUARIOS_ENV = "java:comp/env/ldap/ou";
 		
 	
 	/**  Mensagens */
 	
 	public static final String LOGIN_INVALIDO = "Usuário e/ou senha inválidos";
-	
-	/** Afiliações */
-
-	/*public static final String AFFILIATION_DISCENTE = "DISCENTE";
-	
-	public static final String AFFILIATION_DOCENTE = "DOCENTE";
-	
-	public static final String AFFILIATION_ADMIN_SIAF = "ADMIN-SIAF";
-	
-	public static final String AFFILIATION_STA = "STA";
-
-	public static final String AFFILIATION_BIBLIOTECARIO = "BIBLIOTECARIO";
-
-	public static final String AFFILIATION_COORDENADOR_CURSO = "COORDENADOR_CURSO";
-
-	public static final String AFFILIATION_COORDENADOR_NPI = "COORDENADOR_NPI";
-
-	public static final String AFFILIATION_ESTAGIARIO = "ESTAGIARIO";
-	
-	public static final String AFFILIATION_NUTRICAO = "NUTRICAO";
-	*/
 	
 
 	
