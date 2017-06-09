@@ -1,4 +1,4 @@
-package br.ufc.quixada.npi.ldap.service;
+]package br.ufc.quixada.npi.ldap.service;
 
 import java.util.List;
 
@@ -43,6 +43,16 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public List<Usuario> getByCpfOrNome(String busca) {
 		return usuarioDao.getByCpfOrNome(busca);
+	}
+	
+	@Override
+	public Usuario getByEmail(String email);
+		List<Usuario> usuarios = usuarioDao.getByEmail(email);
+		if (usuarios != null && !usuarios.isEmpty()) {
+			Usuario user = usuarios.get(0);
+			return user;
+		}
+		return null;
 	}
 
 }

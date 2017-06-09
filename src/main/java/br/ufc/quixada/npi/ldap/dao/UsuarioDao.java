@@ -18,5 +18,7 @@ public interface UsuarioDao {
 	public List<Usuario> getByAffiliation(String affiliation);
 
 	public List<Usuario> getByCpfOrNome(String busca);
-	
+
+	public List<Usuario> getByEmail(String busca);
+
 }
