@@ -44,5 +44,15 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public List<Usuario> getByCpfOrNome(String busca) {
 		return usuarioDao.getByCpfOrNome(busca);
 	}
+	
+	@Override
+	public Usuario getByEmail(String email) {
+		List<Usuario> usuarios = usuarioDao.getByEmail(email);
+		if (usuarios != null && !usuarios.isEmpty()) {
+			Usuario user = usuarios.get(0);
+			return user;
+		}
+		return null;
+	}
 
 }
